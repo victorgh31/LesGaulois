@@ -8,6 +8,11 @@ public class Romain {
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
+		if (force < 0) {
+			this.force = 0;
+		} else {
+			this.force = force;
+		}
 	}
 	
 	public String getNom() {
@@ -20,7 +25,14 @@ public class Romain {
 		return "Le romain " + nom + " : ";
 	}
 	public void recevoirCoup(int forceCoup) {
+		assert force >= 0 : "La force d'un Romain doit être positive.";
+		
+		int forceInitiale = force;
+		
 		force -= forceCoup;
+		
+		assert force < forceInitiale : "La force d'un Romain doit diminuer.";
+		
 		if (force > 0) {
 			parler("Aïe");
 		} else {
@@ -28,13 +40,11 @@ public class Romain {
 		}
 	}
 	
-	//TODO on crée un main qui permet de tester la classe Gaulois
 		public static void main(String[] args) {
 			Romain minus;
 			
-			minus = new Romain("Minus", 3);
+			minus = new Romain("Minus", 6);
 			System.out.println(minus.getNom());
-			minus.parler("bonjour");
-			minus.recevoirCoup(8);
+			minus.recevoirCoup(5);
 		}
 }
