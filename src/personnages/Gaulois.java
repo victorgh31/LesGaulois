@@ -42,6 +42,30 @@ public class Gaulois {
 		}
 	}
 
+	public void faireUneDonnation(Musee musee) {
+	    if (nbTrophees == 0) {
+	        System.out.println("Le gaulois " + getNom() + " n'a pas de trophées à donner.");
+	        return;
+	    }
+
+	    System.out.print("Le gaulois " + getNom() + " : « Je donne au musée tous mes trophées :\n");
+
+	    for (int i = 0; i < nbTrophees; i++) {
+	        Equipement equipement = trophees[i];
+	        System.out.println("- " + equipement.getNom());
+	        musee.donnerTrophees(this, equipement);
+	    }
+
+	    System.out.println(" »");
+
+	    // Réinitialiser le tableau de trophées à la fin de la donation
+	    for (int i = 0; i < nbTrophees; i++) {
+	        trophees[i] = null;
+	    }
+
+	    nbTrophees = 0; // Réinitialise le nombre de trophées après la donation
+	}
+
 
 //	@Override
 //	public String toString() {
