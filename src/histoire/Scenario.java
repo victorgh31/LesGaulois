@@ -4,14 +4,14 @@ import personnages.Druide;
 import personnages.Equipement;
 import personnages.Gaulois;
 import personnages.Romain;
-import villagegaulois.Musee;
+//import villagegaulois.Musee;
 
 public class Scenario {
 
 	public static void main(String[] args) {
 		Druide druide = new Druide("Panoramix", 5, 10);
 		druide.parler("Je vais aller préparer une petite potion...");
-		druide.preparerPotion();
+		druide.preparerPotion(10);
 		Gaulois obelix = new Gaulois("Obélix", 25);
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		druide.booster(obelix);
@@ -34,33 +34,9 @@ public class Scenario {
 		
 //		Partie a decommenter
 		
-		Musee musee = new Musee();
-		asterix.faireUneDonnation(musee);
+//		Musee musee = new Musee();
+//		asterix.faireUneDonnation(musee);
 
 	}
 
 }
-//package histoire;
-//
-//import personnages.Druide;
-//import personnages.Gaulois;
-//import personnages.Romain;
-//
-//public class Scenario {
-//
-//	public static void main(String[] args) {
-//		Druide panoramix = new Druide("Panoramix", 5, 10);
-//		Gaulois obelix = new Gaulois("Obélix", 25);
-//		Gaulois asterix = new Gaulois("Astérix", 8);
-//		Romain minus = new Romain("Minus", 6);
-//		
-//		panoramix.preparerPotion(10);
-//		panoramix.booster(obelix);
-//		obelix.parler("Par Bélénos, ce n'est pas juste !");
-//		panoramix.booster(asterix);
-//		asterix.parler("Bonjour");
-//		minus.parler("UN GAU... UN GAUGAU...");
-//		asterix.frapper(minus);
-//	}
-//	
-//}
